@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe_Coelho | Portfólio Retrô</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta8PUbWsyM4QepQaSCY9KbW6f4wADsePRw6jF1c-GXT5XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header" class="fixed-top py-3">
+        <nav class="navbar navbar-expand-lg px-3 container-fluid">
+            <a class="navbar-brand text-light glow-text" href="#home">
+                <span class="d-none d-sm-inline">Felipe_Coelho</span>
+                <span class="d-inline d-sm-none">F.Coelho</span>
+                <span class="status-indicator online ms-2"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn-arcade active" aria-current="page" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-arcade" href="#about">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-arcade" href="#skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-arcade" href="#projects">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-arcade" href="#contact">Contato</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                        <div class="form-check form-switch custom-toggle">
+                            <input class="form-check-input" type="checkbox" role="switch" id="darkModeToggle" aria-label="Alternar modo escuro/claro">
+                            <label class="form-check-label" for="darkModeToggle">
+                                <i class="fas fa-moon light-mode-icon"></i>
+                                <i class="fas fa-sun dark-mode-icon"></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main data-bs-spy="scroll" data-bs-target="#header" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <section id="home" class="d-flex align-items-center justify-content-center text-center vh-100 section-bg pixel-border">
+            <div class="tetris-blocks-container" id="tetrisBlocksContainer"></div>
+            
+            <div class="container text-light z-index-content">
+                <h1 class="display-3 glow-text font-press-start glitch-effect">BEM-VINDO, PLAYER!</h1>
+                <p class="lead mt-4 font-orbitron">Sou Desenvolvedor Front-End e neste espaço você poderá encontrar minhas habilidades e meus principais trabalhos, focado totalmente em interfaces responsivas e experiência do usuário. </p>
+                <a href="#about" class="btn btn-arcade-lg mt-4 animated-button">Conectar</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-game-scene section-bg pixel-border">
+            <div class="scene-intro-initial">
+                <div class="character-area">
+                    <img src="img/trainer.png" alt="Personagem Trainer em Pixel Art" class="trainer-char pixel-art-img" loading="lazy">
+                </div>
+                <button id="showDialogBtn" class="btn btn-retro-arcade mt-4 mb-4">Conheça o programador</button>
+            </div>
+
+            <div class="dialog-box d-none" id="dialogBox">
+                <p class="dialog-text font-press-start" id="dialogText"></p>
+                <span class="dialog-arrow" id="dialogArrow">▼</span>
+            </div>
+
+            <div class="player-data-unlocked d-none fade-in" id="playerDataUnlocked">
+                <div class="container text-light py-5">
+                    <h2 class="text-center mb-5 glow-text font-press-start">SOBRE MIM: FICHA DE JOGADOR</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <div class="player-avatar-frame mx-auto mb-3">
+                                <img src="img/minha_foto.jpg" alt="Avatar Pixel Art de Felipe Coelho" class="img-fluid pixel-art-img" loading="lazy">
+                            </div>
+                            <p class="font-orbitron mb-1">Nickname: <span class="glow-text">Felipe_Coelho</span></p>
+                            <p class="font-orbitron mb-0">Classe: <span class="text-neon-green">Dev Front-End (em formação)</span></p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card bg-dark-transparent border-neon-blue p-4 player-stats-card">
+                                <h3 class="card-title font-press-start text-neon-blue mb-3">PLAYER STATS</h3>
+                                <p class="card-text font-orbitron">
+                                    Desenvolvedor Web Front-End em formação com experiência prática em **projetos freelancer**, focado na criação de interfaces **responsivas** e **intuitivas**. Possuo um diferencial com **conhecimento em princípios de segurança da informação** (XSS, Phishing, SQL Injection, LGPD), o que contribui para o desenvolvimento de soluções mais robustas e seguras.
+                                    Busco minha primeira oportunidade **CLT** para aplicar e expandir minhas habilidades em uma equipe dinâmica, contribuindo para a inovação e o sucesso de projetos.
+                                </p>
+                                <h4 class="font-press-start text-neon-green mt-4 mb-3">FORMAÇÃO ACADÊMICA</h4>
+                                <ul class="list-unstyled font-orbitron">
+                                    <li><i class="fas fa-graduation-cap text-neon-blue me-2"></i> **Tecnólogo em Análise e Desenvolvimento de Sistemas**</li>
+                                    <li><span class="ms-4">UNINOVE – São Paulo | 3º Semestre | Conclusão: 06/2026</span></li>
+                                </ul>
+                                <h4 class="font-press-start text-neon-red mt-4 mb-3">SOFT SKILLS</h4>
+                                <ul class="list-unstyled font-orbitron d-flex flex-wrap">
+                                    <li class="me-3 mb-2"><i class="fas fa-brain text-neon-purple me-1"></i> Resolução de Problemas</li>
+                                    <li class="me-3 mb-2"><i class="fas fa-users text-neon-purple me-1"></i> Trabalho em Equipe</li>
+                                    <li class="me-3 mb-2"><i class="fas fa-rocket text-neon-purple me-1"></i> Proatividade</li>
+                                    <li class="me-3 mb-2"><i class="fas fa-comments text-neon-purple me-1"></i> Comunicação</li>
+                                    <li class="me-3 mb-2"><i class="fas fa-exchange-alt text-neon-purple me-1"></i> Adaptabilidade</li>
+                                    <li class="me-3 mb-2"><i class="fas fa-language text-neon-purple me-1"></i> Inglês Básico (Boa Escrita)</li>
+                                </ul>
+                                <ul class="list-unstyled mt-4 font-orbitron">
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-neon-red me-2"></i> Localização: São Paulo, Brasil</li>
+                                    <li class="mb-2"><i class="fas fa-envelope text-neon-green me-2"></i> Email: <a href="mailto:fecoelho00@outlook.com" class="text-light-link">fecoelho00@outlook.com/a></li>
+                                    <li class="mb-2"><i class="fab fa-linkedin text-neon-blue me-2"></i> LinkedIn: <a href="https://www.linkedin.com/in/felipe-coelho-82943a311/" target="_blank" class="text-light-link">Felipe Coelho</a></li>
+                                    <li class="mb-2"><i class="fab fa-github text-purple me-2"></i> GitHub: <a href="https://github.com/Fehcoelhords" target="_blank" class="text-light-link">Felipe Coelho</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+        <section id="skills" class="py-5 section-bg pixel-border">
+            <div class="container text-light py-5">
+                <h2 class="text-center mb-5 glow-text font-press-start">HABILIDADES: SKILLS & PERKS</h2>
+                <h3 class="font-press-start text-neon-green mb-4 text-center">LINGUAGENS & TECNOLOGIAS</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-green mb-3"><i class="fab fa-html5 me-2"></i> HTML</h4>
+                            <span class="skill-level">Nível: Avançado</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-blue mb-3"><i class="fab fa-css3-alt me-2"></i> CSS</h4>
+                            <span class="skill-level">Nível: Avançado</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-purple mb-3"><i class="fab fa-js me-2"></i> JavaScript</h4>
+                            <span class="skill-level">Nível: Intermediário</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-red mb-3"><i class="fab fa-php me-2"></i> PHP</h4>
+                            <span class="skill-level">Nível: Básico</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-orange mb-3"><i class="fab fa-git-alt me-2"></i> Git (básico)</h4>
+                            <span class="skill-level">Nível: Iniciante</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-light-blue mb-3"><i class="fab fa-bootstrap me-2"></i> Bootstrap 5</h4>
+                            <span class="skill-level">Nível: Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="font-press-start text-neon-red mb-4 text-center">SEGURANÇA & FERRAMENTAS</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-purple mb-3"><i class="fas fa-shield-alt me-2"></i> Conceitos de Segurança</h4>
+                            <span class="skill-level">Nível: Conhecimento Básico</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-purple mb-3"><i class="fas fa-bug me-2"></i> XSS, Phishing, SQL Injection</h4>
+                            <span class="skill-level">Nível: Noções</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-purple mb-3"><i class="fas fa-user-shield me-2"></i> LGPD (noções)</h4>
+                            <span class="skill-level">Nível: Noções</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-green mb-3"><i class="fas fa-code me-2"></i> VS Code</h4>
+                            <span class="skill-level">Nível: Experiente</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-green mb-3"><i class="fab fa-linux me-2"></i> Kali Linux</h4>
+                            <span class="skill-level">Nível: Básico (análise de vulnerabilidades)</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-purple p-4">
+                            <h4 class="font-orbitron text-neon-blue mb-3"><i class="fas fa-mobile-alt me-2"></i> Design Responsivo</h4>
+                            <span class="skill-level">Nível: Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          <section id="projects" class="py-5 section-bg pixel-border">
+     <div class="container text-light py-5">
+         <h2 class="text-center mb-5 glow-text font-press-start">PROJETOS: MISSÕES CONCLUÍDAS</h2>
+         <div class="row row-cols-1 row-cols-md-2 g-4">
+             <div class="col">
+                 <div class="project-card card bg-dark-transparent border-neon-blue h-100 glow-on-hover">
+                     <img src="img/foto02_projeto.jpeg" class="card-img-top pixel-art-img" alt="Screenshot do Site para Advogado">
+                     <div class="card-body">
+                         <h3 class="card-title font-press-start text-neon-blue">Site para Advogado (Freelancer)</h3>
+                         <p class="card-text font-orbitron">Criação de site estático **responsivo** com foco em experiência do usuário, apresentando serviços e informações de contato. Implementação de formulário de contato integrado com **PHP** para envio direto de mensagens.</p>
+                         <p class="card-text font-orbitron mb-3"><small class="text-neon-green">Tecnologias: HTML, CSS, JavaScript, PHP</small></p>
+                         <div class="d-flex justify-content-center"> <a href="https://dr.advdavifelixazevedo.com" target="_blank" class="btn btn-arcade-small animated-button"><i class="fas fa-external-link-alt me-2"></i> Ver Site</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col">
+                 <div class="project-card card bg-dark-transparent border-neon-blue h-100 glow-on-hover">
+                     <img src="img/foto01_projeto.jpeg" class="card-img-top pixel-art-img" alt="Screenshot do Site Omega Recycling">
+                     <div class="card-body">
+                         <h3 class="card-title font-press-start text-neon-blue">Site Omega Recycling (Freelancer)</h3>
+                         <p class="card-text font-orbitron">Desenvolvimento de portal institucional para empresa de coleta seletiva, destacando serviços e valores ambientais. Otimização de imagens e código para garantir carregamento rápido e boa performance.</p>
+                         <p class="card-text font-orbitron mb-3"><small class="text-neon-green">Tecnologias: HTML, CSS, JavaScript</small></p>
+                         <div class="d-flex justify-content-center"> <a href="https://omegarecyclingbrasil.com.br/" target="_blank" class="btn btn-arcade-small animated-button"><i class="fas fa-external-link-alt me-2"></i> Ver Site</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
+
+        <section id="certifications" class="py-5 section-bg pixel-border">
+            <div class="container text-light py-5">
+                <h2 class="text-center mb-5 glow-text font-press-start">UPGRADES & CONQUISTAS</h2>
+                <h3 class="font-press-start text-neon-green mb-4 text-center">CURSOS & CERTIFICAÇÕES</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-green mb-3"><i class="fas fa-certificate me-2"></i> Desenvolvimento Web (Udemy)</h4>
+                            <span class="skill-level">Plataforma: Udemy</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-blue mb-3"><i class="fas fa-shield-alt me-2"></i> Cyber Security Completo (Udemy)</h4>
+                            <span class="skill-level">Plataforma: Udemy</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-purple mb-3"><i class="fas fa-laptop-code me-2"></i> JavaScript, jQuery, Ajax e Json (Udemy)</h4>
+                            <span class="skill-level">Plataforma: Udemy</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skill-card bg-dark-transparent border-neon-blue p-4">
+                            <h4 class="font-orbitron text-neon-red mb-3"><i class="fas fa-lock me-2"></i> Segurança da Informação (Bradesco)</h4>
+                            <span class="skill-level">Instituição: Bradesco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="py-5 section-bg pixel-border">
+            <div class="container text-light py-5">
+                <h2 class="text-center mb-5 glow-text font-press-start">CONTATO: TERMINAL DE COMUNICAÇÃO</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card bg-dark-transparent border-neon-blue p-4 terminal-card">
+                            <h3 class="card-title font-orbitron text-neon-red mb-4">INICIAR COMUNICAÇÃO</h3>
+                            <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_HASH" method="POST">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label font-orbitron terminal-label">Nome de Usuário:</label>
+                                    <input type="text" class="form-control terminal-input" id="name" name="name" required aria-label="Nome Completo">
+                                    <div class="invalid-feedback" id="nameFeedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label font-orbitron terminal-label">Endereço IP (Email):</label>
+                                    <input type="email" class="form-control terminal-input" id="email" name="email" required aria-label="Endereço de E-mail">
+                                    <div class="invalid-feedback" id="emailFeedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label font-orbitron terminal-label">Assunto da Mensagem:</label>
+                                    <input type="text" class="form-control terminal-input" id="subject" name="_subject" required aria-label="Assunto da Mensagem">
+                                    <div class="invalid-feedback" id="subjectFeedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label font-orbitron terminal-label">Mensagem Codificada:</label>
+                                    <textarea class="form-control terminal-input" id="message" name="message" rows="5" required aria-label="Sua Mensagem"></textarea>
+                                    <div class="invalid-feedback" id="messageFeedback"></div>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-arcade-lg animated-button">TRANSMITIR MENSAGEM</button>
+                                </div>
+                                <div id="formStatus" class="mt-3 text-center font-press-start text-neon-green d-none"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center text-light pixel-border-top">
+        <div class="container font-orbitron">
+            <p>&copy; 2025 Felipe_Coelho. Todos os direitos reservados. | Design inspirado em games retrô.</p>
+            <div class="social-links mt-3">
+                <a href="https://github.com/Fehcoelhords" target="_blank" class="text-light mx-2 glow-on-hover" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/felipe-coelho-82943a311/" target="_blank" class="text-light mx-2 glow-on-hover" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
