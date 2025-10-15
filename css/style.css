@@ -1,0 +1,1011 @@
+/* Variaveis de Cores e Fontes globais do projeto */
+:root {
+    --font-press-start: 'Press Start 2P', cursive;
+    --font-orbitron: 'Orbitron', sans-serif;
+
+    /* Paleta de Cores Retro Neon */
+    --color-black: #1a1a1a;
+    --color-dark-grey: #2e2e2e;
+    --color-light-grey: #b0b0b0;
+    --color-electric-blue: #00ffff; /* Ciano Neon */
+    --color-purple: #9933ff;       /* Roxo Neon */
+    --color-neon-green: #39ff14;   /* Verde Neon */
+    --color-vibrant-red: #ff073a;  /* Vermelho Vibrante Neon */
+    --color-orange: #ff9900;       /* Laranja Neon */
+    --color-light-blue: #00ccff;   /* Azul Claro Neon */
+
+    /* Efeitos de Sombra e Glow */
+    --glow-effect-blue: 0 0 5px var(--color-electric-blue), 0 0 10px var(--color-electric-blue), 0 0 15px var(--color-electric-blue);
+    --glow-effect-green: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 15px var(--color-neon-green);
+    --glow-effect-red: 0 0 5px var(--color-vibrant-red), 0 0 10px var(--color-vibrant-red), 0 0 15px var(--color-vibrant-red);
+    --glow-effect-purple: 0 0 5px var(--color-purple), 0 0 10px var(--color-purple), 0 0 15px var(--color-purple);
+
+    /* Cores dos blocos Tetris */
+    --tetris-color-1: #00a0e9; /* Azul L-tetromino */
+    --tetris-color-2: #ff7f00; /* Laranja J-tetromino */
+    --tetris-color-3: #c800ff; /* Roxo T-tetromino */
+    --tetris-color-4: #00ff00; /* Verde S-tetromino */
+    --tetris-color-5: #ff0000; /* Vermelho Z-tetromino */
+    --tetris-color-6: #ffff00; /* Amarelo O-tetromino */
+    --tetris-color-7: #00ffff; /* Ciano I-tetromino */
+
+    /* Tamanho base do bloco Tetris */
+    --tetris-block-size: 30px;
+}
+
+/* Reset Basico de CSS e Estilos Globais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-orbitron);
+    background-color: var(--color-black);
+    color: var(--color-light-grey);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne rolagem horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-electric-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-neon-green);
+}
+
+.text-light-link {
+    color: var(--color-light-grey);
+}
+
+.text-light-link:hover {
+    color: var(--color-electric-blue);
+}
+
+/* Classes de utilidade para cores neon */
+.text-neon-blue { color: var(--color-electric-blue) !important; }
+.text-neon-green { color: var(--color-neon-green) !important; }
+.text-neon-red { color: var(--color-vibrant-red) !important; }
+.text-neon-purple { color: var(--color-purple) !important; }
+.text-orange { color: var(--color-orange) !important; }
+.text-light-blue { color: var(--color-light-blue) !important; }
+
+/* Definicao de fontes personalizadas */
+.font-press-start {
+    font-family: var(--font-press-start);
+}
+
+.font-orbitron {
+    font-family: var(--font-orbitron);
+}
+
+/* Efeito de brilho aplicado a textos */
+.glow-text {
+    text-shadow: var(--glow-effect-blue);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    from { text-shadow: var(--glow-effect-blue); }
+    to { text-shadow: var(--glow-effect-green); }
+}
+
+/* Efeito de glitch visual aplicado a titulos */
+.glitch-effect {
+    position: relative;
+    animation: glitch-animation 3s infinite linear alternate;
+}
+
+@keyframes glitch-animation {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+
+/* --- Estilos para Secoes Gerais --- */
+.section-bg {
+    background-color: var(--color-dark-grey);
+}
+
+/* Borda com estilo pixel art para as secoes */
+.pixel-border {
+    border: 4px solid var(--color-electric-blue);
+    box-shadow: var(--glow-effect-blue);
+    border-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="4" fill="%2300ffff"/><rect x="8" y="0" width="4" height="4" fill="%2300ffff"/><rect x="0" y="8" width="4" height="4" fill="%2300ffff"/><rect x="8" y="8" width="4" height="4" fill="%2300ffff"/></svg>') 4 repeat;
+    padding: 2rem;
+    margin-bottom: 2rem; /* Espacamento entre secoes */
+    position: relative;
+    z-index: 1; /* Garante visibilidade da borda */
+}
+
+.pixel-border-top {
+    border-top: 4px solid var(--color-electric-blue);
+    border-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="4" fill="%2300ffff"/><rect x="8" y="0" width="4" height="4" fill="%2300ffff"/></svg>') 4 repeat;
+}
+
+/* Otimizacao para renderizacao de imagens pixeladas */
+.pixel-art-img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* --- HEADER Navegacao HUD de Jogo --- */
+#header {
+    background-color: rgba(30, 30, 30, 0.9); /* Fundo semi-transparente */
+    border-bottom: 3px solid var(--color-neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* Sombra neon */
+    z-index: 1050; /* Z-index alto para o header */
+    font-family: var(--font-press-start);
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    padding-left: 15px; /* Espacamento a esquerda */
+}
+
+.navbar-toggler {
+    border: 2px solid var(--color-electric-blue);
+    box-shadow: var(--glow-effect-blue);
+    padding: 0.25rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 0; /* Bordas retas */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 255, 255)' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Estilo para botoes de navegacao tema arcade */
+.btn-arcade {
+    background-color: var(--color-dark-grey);
+    color: var(--color-electric-blue);
+    border: 2px solid var(--color-electric-blue);
+    padding: 8px 15px;
+    margin: 5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--glow-effect-blue);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Para efeito de brilho interno */
+}
+
+.btn-arcade::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3); /* Brilho ao passar o mouse */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: 0;
+}
+
+.btn-arcade:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.btn-arcade:hover {
+    color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+    transform: translateY(-2px); /* Efeito de elevacao sutil */
+}
+
+.btn-arcade.active {
+    background-color: var(--color-electric-blue);
+    color: var(--color-dark-grey);
+    border-color: var(--color-electric-blue);
+    box-shadow: var(--glow-effect-blue);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra para texto ativo */
+}
+
+.btn-arcade.active:hover {
+    background-color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+}
+
+/* Indicador visual de status online */
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+.status-indicator.online {
+    background-color: var(--color-neon-green);
+    box-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green);
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+/* Toggle de Modo Dark/Light customizado */
+.custom-toggle {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%239933ff'/%3e%3c/svg%3e");
+    padding-left: 2.8em; /* Ajuste para o icone */
+    margin-left: 10px;
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+.custom-toggle .form-check-input {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--color-dark-grey);
+    border: 2px solid var(--color-purple);
+    box-shadow: var(--glow-effect-purple);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.custom-toggle .form-check-input:checked {
+    background-color: var(--color-electric-blue);
+    border-color: var(--color-electric-blue);
+    box-shadow: var(--glow-effect-blue);
+}
+
+.custom-toggle .form-check-input:focus {
+    box-shadow: var(--glow-effect-blue); /* Sombra de foco */
+}
+
+/* Estilo para os icones de modo Dark/Light */
+.custom-toggle .form-check-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Impede interacao com input */
+}
+
+.custom-toggle .light-mode-icon,
+.custom-toggle .dark-mode-icon {
+    font-size: 1.2rem;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-toggle .light-mode-icon {
+    left: 8px; /* Posicao do icone de lua */
+    color: var(--color-light-grey);
+    opacity: 1;
+}
+
+.custom-toggle .dark-mode-icon {
+    right: 8px; /* Posicao do icone de sol */
+    color: var(--color-electric-blue);
+    opacity: 0;
+}
+
+.custom-toggle .form-check-input:checked ~ .form-check-label .light-mode-icon {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.custom-toggle .form-check-input:checked ~ .form-check-label .dark-mode-icon {
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+
+/* --- SECAO INICIO Home do Portfolio com Efeito Tetris --- */
+#home {
+    /* Imagem de fundo principal da secao Home */
+    background-image: url('../img/fundo01.png');
+    background-size: cover; /* Imagem cobre toda a area */
+    background-position: center; /* Imagem centralizada */
+    background-repeat: no-repeat; /* Imagem nao se repete */
+
+    /* Overlay escuro sobre a imagem de fundo e animacao de glitch */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/fundo01.png') no-repeat center center / cover;
+    animation: background-glitch 10s infinite alternate; /* Animacao de glitch no fundo */
+    position: relative; /* Necessario para o posicionamento absoluto dos blocos Tetris */
+    overflow: hidden; /* Oculta partes dos blocos Tetris que caem fora da secao */
+}
+
+/* Container para os blocos de Tetris sobre os quais eles irao cair */
+.tetris-blocks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Garante que blocos fora da area visivel nao causem barras de rolagem */
+    z-index: 0; /* Posiciona os blocos atras do conteudo principal */
+    pointer-events: none; /* Impede interferencia com interacoes do mouse */
+}
+
+/* Estilo individual para cada bloco de Tetris */
+.tetris-block {
+    position: absolute;
+    width: var(--tetris-block-size); /* Largura do bloco */
+    height: var(--tetris-block-size); /* Altura do bloco */
+    /* background-color sera definido via JavaScript com as cores neon */
+    /* `color` e definido via JS para que `currentColor` no box-shadow funcione */
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Borda estilo pixel art */
+    opacity: 0.8; /* Transparencia leve */
+    image-rendering: pixelated; /* Garante visual pixelado */
+    transform: translateY(-100%); /* Inicia a animacao acima da tela */
+    
+    /* Efeito de rastro e brilho neon para o bloco */
+    box-shadow:
+        0 0 5px currentColor,         /* Brilho suave usando a cor definida no JS */
+        0 0 15px currentColor,        /* Brilho neon mais forte usando a cor do bloco */
+        0 5px 10px rgba(0, 0, 0, 0.3), /* Sombra discreta para profundidade */
+        0 10px 20px -5px currentColor; /* Rastro de cor que segue o bloco */
+}
+
+/* Animacao de queda para os blocos de Tetris */
+@keyframes fall {
+    from { transform: translateY(-100%); } /* Bloco comeca acima do topo da tela */
+    to { transform: translateY(calc(100vh + var(--tetris-block-size))); /* Bloco cai ate abaixo da tela */ }
+}
+
+/* Z-index para o conteudo principal da secao */
+.z-index-content {
+    z-index: 1; /* Conteudo acima dos blocos Tetris */
+    position: relative; /* Necessario para z-index */
+}
+
+/* Animacao de glitch para o fundo da secao */
+@keyframes background-glitch {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 1% 1%; }
+    50% { background-position: 0% 0%; }
+    75% { background-position: -1% -1%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Estilo para o botao INICIAR JOGO */
+.btn-arcade-lg {
+    background-color: var(--color-vibrant-red);
+    color: var(--color-black);
+    border: 3px solid var(--color-vibrant-red);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--color-vibrant-red), 0 0 20px var(--color-vibrant-red);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-press-start);
+}
+
+.btn-arcade-lg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: left 0.5s ease;
+}
+
+.btn-arcade-lg:hover::before {
+    left: 100%;
+}
+
+.btn-arcade-lg:hover {
+    color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+    transform: translateY(-2px);
+}
+
+.animated-button {
+    animation: button-pulse 1.5s infinite alternate;
+}
+
+@keyframes button-pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+
+/* --- SECAO SOBRE MIM Cena de Jogo Retro --- */
+.about-game-scene {
+    background: url('../img/night-scene-placeholder.png') no-repeat center bottom / cover; /* Fundo de cenario noturno */
+    min-height: 100vh; /* Altura minima para a cena */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem; /* Espacamento inferior */
+}
+
+.about-game-scene::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    z-index: 1;
+}
+
+/* Area da introducao inicial personagem + botao */
+.scene-intro-initial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Acima do overlay */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.character-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha personagem na parte de baixo */
+    margin-bottom: 20px;
+}
+
+.trainer-char {
+    width: 150px; /* Tamanho do personagem */
+    height: auto;
+    animation: bounce 2s infinite ease-in-out; /* Animacao sutil */
+    image-rendering: pixelated; /* Mantem visual pixelado */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    z-index: 5;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Botao Conheca o programador */
+.btn-retro-arcade {
+    background-color: var(--color-vibrant-red);
+    color: var(--color-black);
+    border: 3px solid var(--color-vibrant-red);
+    padding: 10px 25px;
+    font-family: var(--font-press-start);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--color-vibrant-red), 0 0 20px var(--color-vibrant-red);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 0; /* Bordas retas */
+    position: relative;
+    z-index: 10;
+}
+
+.btn-retro-arcade:hover {
+    background-color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: 0 0 15px var(--color-neon-green), 0 0 25px var(--color-neon-green);
+    transform: translateY(-2px);
+}
+
+.btn-retro-arcade:active {
+    transform: translateY(0);
+    box-shadow: 0 0 5px var(--color-vibrant-red);
+}
+
+
+/* Balao de Dialogo Inicialmente Oculto */
+.dialog-box {
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro */
+    border: 4px solid var(--color-light-grey); /* Borda pixelada */
+    border-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="4" fill="%23b0b0b0"/><rect x="8" y="0" width="4" height="4" fill="%23b0b0b0"/><rect x="0" y="8" width="4" height="4" fill="%23b0b0b0"/><rect x="8" y="8" width="4" height="4" fill="%23b0b0b0"/></svg>') 4 repeat;
+    padding: 1.5rem;
+    width: 90%; /* Largura do balao */
+    max-width: 800px; /* Limite de largura */
+    margin: 0 auto; /* Centraliza */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Glow azul */
+    position: relative;
+    z-index: 4;
+    min-height: 120px; /* Altura minima para evitar colapso */
+    display: flex; /* Para centralizar texto verticalmente */
+    align-items: center; /* Centraliza texto verticalmente */
+    justify-content: center; /* Centraliza texto horizontalmente */
+}
+
+.dialog-text {
+    color: var(--color-neon-green);
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap; /* Mantem quebras de linha e espacos */
+    overflow: hidden; /* Importante para efeito de digitacao */
+    border-right: 2px solid rgba(57, 255, 20, 0.75); /* Cursor de digitacao */
+    animation: blink-caret 0.75s step-end infinite;
+    flex-grow: 1; /* Permite que o texto ocupe o espaco */
+    text-align: left; /* Alinha texto a esquerda */
+    margin-right: 15px; /* Espaco para a seta */
+}
+
+/* Animacao do Cursor de Digitacao */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(57, 255, 20, 0.75); }
+}
+
+.dialog-arrow {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--color-neon-blue);
+    animation: pulse-arrow 0.8s infinite alternate;
+    cursor: pointer;
+    display: none; /* Oculto no inicio */
+}
+
+@keyframes pulse-arrow {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(3px); opacity: 0.7; }
+}
+
+/* Conteudo da Ficha de Jogador Inicialmente Totalmente Oculto */
+.player-data-unlocked {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    width: 100%;
+    background-color: var(--color-dark-grey); /* Mantem o bg da secao */
+    padding: 2rem 0; /* Espacamento interno */
+    box-sizing: border-box; /* Inclui padding na largura/altura */
+    z-index: 2; /* Para ficar sobre o background */
+    min-height: 50vh; /* Altura razoavel */
+}
+
+.player-data-unlocked.show {
+    opacity: 1;
+}
+
+
+/* Frame do Avatar ARREDONDADO */
+.player-avatar-frame {
+    width: 180px;
+    height: 180px;
+    border: 4px solid var(--color-purple);
+    box-shadow: var(--glow-effect-purple);
+    background-color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%; /* Contem o avatar circular */
+}
+
+.player-avatar-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px dashed var(--color-vibrant-red);
+    animation: dashed-border 2s infinite linear;
+    border-radius: 50%; /* Borda tracejada arredondada */
+}
+
+@keyframes dashed-border {
+    from { border-image-source: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" fill="%23ff073a"/><rect x="4" y="4" width="4" height="4" fill="%23ff073a"/></svg>'); }
+    to { border-image-source: url('data:image/svg+xml,<svg width="8" height="8" viewBox="0 0 8 8" fill="%23ff073a"/><rect x="0" y="4" width="4" height="4" fill="%23ff073a"/></svg>'); }
+}
+
+
+.player-avatar-frame img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    border-radius: 50%; /* Imagem do avatar circular */
+}
+
+.player-stats-card {
+    background-color: rgba(46, 46, 46, 0.9);
+    border: 3px solid var(--color-electric-blue);
+    box-shadow: var(--glow-effect-blue);
+    border-radius: 0;
+}
+
+/* --- SECAO HABILIDADES --- */
+.skill-card {
+    background-color: rgba(46, 46, 46, 0.9);
+    border: 3px solid var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+    border-radius: 0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Garante alinhamento de cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--glow-effect-blue);
+}
+
+.skill-card h3, .skill-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card h3 i, .skill-card h4 i {
+    font-size: 1.5rem;
+}
+
+/* Barras de Progresso Customizadas */
+.custom-progress {
+    height: 20px;
+    background-color: var(--color-black);
+    border: 2px solid var(--color-electric-blue);
+    border-radius: 0;
+    box-shadow: inset 0 0 5px rgba(0,255,255,0.5);
+    overflow: hidden;
+}
+
+.custom-progress .progress-bar {
+    border-radius: 0;
+    transition: width 0.8s ease-in-out;
+    background: linear-gradient(90deg, var(--color-neon-green), var(--color-electric-blue));
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.7);
+    text-shadow: 0 0 3px rgba(0,0,0,0.7);
+    color: var(--color-black);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-family: var(--font-press-start);
+}
+
+.skill-level {
+    font-family: var(--font-press-start);
+    font-size: 0.8rem;
+    color: var(--color-light-grey);
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* --- SECAO PROJETOS --- */
+.project-card {
+    background-color: rgba(46, 46, 46, 0.9);
+    border: 3px solid var(--color-vibrant-red);
+    box-shadow: var(--glow-effect-red);
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para as imagens dos projetos, para que se encaixem sem cortar */
+.project-card .card-img-top {
+    height: 200px; /* Altura fixa para o espaço da imagem */
+    width: 100%; /* Largura total do container do card */
+    object-fit: contain; /* Redimensiona a imagem para caber inteiramente, sem cortar ou distorcer */
+    /* Isso pode deixar barras vazias (pretas ou brancas) se a proporcao da imagem for diferente */
+    /* Ex: imagem larga em espaco alto, tera barras em cima/embaixo */
+    /* Ex: imagem alta em espaco largo, tera barras nas laterais */
+    background-color: #000; /* Cor de fundo para as barras caso object-fit: contain seja usado e ocupe menos de 100% */
+    border-bottom: 2px solid var(--color-purple); /* Borda inferior mantida */
+}
+
+
+.project-card .card-body {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Efeito Glow on Hover para Cards de Projeto */
+.glow-on-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--glow-effect-blue), 0 0 25px var(--color-electric-blue);
+    border-color: var(--color-electric-blue);
+}
+
+/* Botoes de Projeto */
+.btn-arcade-small {
+    background-color: var(--color-dark-grey);
+    color: var(--color-electric-blue);
+    border: 2px solid var(--color-electric-blue);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    box-shadow: var(--glow-effect-blue);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-press-start);
+}
+
+.btn-arcade-small::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: 0;
+}
+
+.btn-arcade-small:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.btn-arcade-small:hover {
+    color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+    transform: translateY(-2px);
+}
+
+
+/* --- SECAO CONTATO --- */
+.terminal-card {
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 3px solid var(--color-neon-red);
+    box-shadow: var(--glow-effect-red);
+    border-radius: 0;
+}
+
+.terminal-label {
+    font-size: 1.1rem;
+    color: var(--color-neon-green);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.terminal-input {
+    background-color: var(--color-black);
+    color: var(--color-neon-green);
+    border: 2px solid var(--color-neon-blue);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-orbitron);
+    box-shadow: inset 0 0 5px rgba(0,255,255,0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal-input:focus {
+    background-color: var(--color-black);
+    color: var(--color-neon-green);
+    border-color: var(--color-neon-green);
+    box-shadow: inset 0 0 8px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.5);
+    outline: none;
+}
+
+.terminal-input::placeholder {
+    color: rgba(0, 255, 255, 0.5); /* Placeholder com cor neon */
+}
+
+/* Validacao de Formulario Bootstrap customizada */
+.terminal-input.is-invalid {
+    border-color: var(--color-vibrant-red) !important;
+    box-shadow: inset 0 0 5px rgba(255,7,58,0.5), 0 0 8px rgba(255,7,58,0.7) !important;
+}
+
+.terminal-input.is-valid {
+    border-color: var(--color-neon-green) !important;
+    box-shadow: inset 0 0 5px rgba(57,255,20,0.5), 0 0 8px rgba(57,255,20,0.7) !important;
+}
+
+.invalid-feedback {
+    color: var(--color-vibrant-red);
+    font-size: 0.9rem;
+    font-family: var(--font-press-start);
+    margin-top: 5px;
+    animation: text-flicker 0.5s infinite alternate;
+}
+
+/* Animacao para mensagens de status do formulario */
+#formStatus {
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 0;
+    font-family: var(--font-press-start);
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 0 10px;
+    animation: text-flicker 0.3s infinite alternate;
+}
+
+#formStatus.success {
+    background-color: rgba(57, 255, 20, 0.2);
+    border-color: var(--color-neon-green);
+    color: var(--color-neon-green);
+    box-shadow: var(--glow-effect-green);
+}
+
+#formStatus.error {
+    background-color: rgba(255, 7, 58, 0.2);
+    border-color: var(--color-vibrant-red);
+    color: var(--color-vibrant-red);
+    box-shadow: var(--glow-effect-red);
+}
+
+@keyframes text-flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-black);
+    border-top: 3px solid var(--color-electric-blue);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-family: var(--font-orbitron);
+    font-size: 0.9rem;
+    padding-bottom: 20px; /* Espaco para links sociais */
+}
+
+.social-links a {
+    color: var(--color-light-grey);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-electric-blue);
+    transform: translateY(-3px) scale(1.1);
+    text-shadow: var(--glow-effect-blue);
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(30, 30, 30, 0.95);
+        border: 2px solid var(--color-electric-blue);
+        border-top: none;
+        box-shadow: var(--glow-effect-blue);
+        padding: 15px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        margin: 10px auto;
+        width: 80%; /* Ajusta largura dos botoes no mobile */
+        max-width: 250px;
+    }
+
+    .custom-toggle {
+        margin: 15px auto;
+        justify-content: center;
+    }
+
+    .pixel-border {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Ajustes para a cena do jogo em mobile */
+    .about-game-scene {
+        min-height: 80vh; /* Ajuste para mobile */
+        padding-bottom: 1rem;
+    }
+
+    .scene-intro-initial {
+        height: auto; /* Altura se ajusta ao conteudo */
+        padding: 0.5rem;
+    }
+
+    .trainer-char {
+        width: 100px; /* Menor em telas pequenas */
+    }
+
+    .dialog-box {
+        width: 98%; /* Quase largura total */
+        padding: 1rem 0.8rem; /* Paddings menores */
+        margin-bottom: 0.5rem;
+        min-height: 100px; /* Garante que o balao nao seja muito pequeno */
+    }
+
+    .dialog-text {
+        font-size: 0.75rem; /* Texto menor */
+    }
+
+    .player-data-unlocked {
+        padding-top: 1rem;
+    }
+
+    .player-avatar-frame {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices portrait phones */
+    .about-game-scene {
+        min-height: 70vh; /* Ajuste ainda menor */
+    }
+    .scene-intro-initial {
+        height: auto; /* Mais compacto */
+    }
+    .trainer-char {
+        width: 80px;
+    }
+    .dialog-text {
+        font-size: 0.7rem;
+    }
+}
+
+
+/* Estilos para o Dark Mode (padrao do Bootstrap) */
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--color-black);
+    --bs-body-color: var(--color-light-grey);
+    --bs-heading-color: var(--color-electric-blue);
+    --bs-link-color: var(--color-electric-blue);
+    --bs-link-hover-color: var(--color-neon-green);
+    --bs-border-color: var(--color-dark-grey); /* Usado em componentes Bootstrap */
+}
+
+/* Estilos para o Light Mode */
+[data-bs-theme="light"] {
+    --bs-body-bg: #ee0000;
+    --bs-body-color: #ffffff;
+    --bs-heading-color: #007bff;
+    --bs-link-color: #007bff;
+    --bs-link-hover-color: #0056b3;
+    --bs-border-color: #0c0000;
+
+    /* Ajustes de cores neon para o modo claro */
+    --color-black: #5c1d49; /* Fundo mais claro */
+    --color-dark-grey: #e8e8e8;
+    --color-light-grey: #ffffff;
+    --color-electric-blue: #0056b3; /* Azul mais escuro */
+    --color-purple: #6600cc;       /* Roxo mais escuro */
+    --color-neon-green: #008000;   /* Verde mais escuro */
+    --color-vibrant-red: #cc0000;  /* Vermelho mais escuro */
+    --color-orange: #b36b00;
+    --color-light-blue: #008cc0;
+
+    /* Ajuste de glow para o light mode */
+    --glow-effect-blue: 0 0 5px rgba(0, 86, 179, 0.7), 0 0 10px rgba(0, 86, 179, 0.5);
+    --glow-effect-green: 0 0 5px rgba(0, 128, 0, 0.7), 0 0 10px rgba(0, 128, 0, 0.5);
+    --glow-effect-red: 0 0 5px rgba(204, 0, 0, 0.7), 0 0 10px rgba(204, 0, 0, 0.5);
+    --glow-effect-purple: 0 0 5px rgba(102, 0, 204, 0.7), 0 0 10px rgba(102, 0, 204, 0.5);
+}
