@@ -1,6 +1,6 @@
 import React from "react";
-// NOME CORRIGIDO ABAIXO
-import backgroundImage from "../../assets/fundo01.PNG";
+// CORREÇÃO FINAL E DEFINITIVA: Usando o nome do arquivo em minúsculas
+import backgroundImage from "../../assets/fundo01.png";
 import TetrisAnimation from "./TetrisAnimation.jsx";
 
 const Home = () => {
