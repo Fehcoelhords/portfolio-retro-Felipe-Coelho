@@ -1,12 +1,13 @@
 import React from "react";
-import backgroundImage from "../../assets/fundo01.png";
+// NOME CORRIGIDO ABAIXO
+import backgroundImage from "../../assets/fundo01.PNG";
 import TetrisAnimation from "./TetrisAnimation.jsx";
 
 const Home = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center text-center min-h-screen p-8 pixel-border" // Adicionada a classe aqui
+      className="relative flex items-center justify-center text-center min-h-screen p-8 pixel-border"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${backgroundImage})`,
         backgroundSize: "cover",

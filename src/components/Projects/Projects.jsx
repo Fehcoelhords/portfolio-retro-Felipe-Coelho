@@ -1,9 +1,9 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import imgAdvogado from "../../assets/foto02_projeto.jpeg";
-import imgOmega from "../../assets/banner_2.jpg"; // Corrigido na etapa anterior
-// CORREÇÃO FINAL: Usando a extensão correta .jpeg
-import imgTodoList from "../../assets/foto01_projeto.jpeg";
+// NOMES CORRIGIDOS ABAIXO
+import imgAdvogado from "../../assets/foto02_projeto.JPEG";
+import imgOmega from "../../assets/banner_2.JPG";
+import imgTodoList from "../../assets/foto01_projeto.JPG";
 
 const Projects = () => {
   const projectList = [

@@ -1,22 +1,11 @@
-// (Mantenha as importações como estão)
 import React, { useState } from "react";
-import minhaFoto from "../../assets/minha_foto.jpg";
-import trainerImg from "../../assets/trainer.png";
-import {
-  FaGraduationCap,
-  FaBrain,
-  FaUsers,
-  FaRocket,
-  FaComments,
-  FaExchangeAlt,
-  FaLanguage,
-  FaMapMarkerAlt,
-  FaEnvelope,
-} from "react-icons/fa";
+// NOMES CORRIGIDOS ABAIXO
+import minhaFoto from "../../assets/minha_foto.JPG";
+import trainerImg from "../../assets/trainer.PNG";
+import { FaGraduationCap, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 const About = () => {
-  // (Mantenha o estado useState como está)
   const [dialogVisible, setDialogVisible] = useState(false);
   const [playerDataVisible, setPlayerDataVisible] = useState(false);
 
@@ -34,8 +23,6 @@ const About = () => {
       id="about"
       className="relative bg-retro-dark-grey p-8 min-h-screen flex flex-col items-center justify-center overflow-hidden pixel-border"
     >
-      {/* O resto do código do componente permanece o mesmo */}
-      {/* Cena Inicial */}
       {!dialogVisible && !playerDataVisible && (
         <div className="text-center z-10">
           <img
@@ -53,7 +40,6 @@ const About = () => {
         </div>
       )}
 
-      {/* Caixa de Diálogo */}
       {dialogVisible && (
         <div
           className="bg-black bg-opacity-90 border-4 border-retro-light-grey p-6 w-11/12 max-w-3xl z-10 cursor-pointer"
@@ -73,7 +59,6 @@ const About = () => {
         </div>
       )}
 
-      {/* Dados do Jogador */}
       {playerDataVisible && (
         <div className="container text-white py-5 z-10 w-full animate-[fadeIn_1s_ease-in-out]">
           <h2 className="text-center mb-10 text-2xl md:text-3xl font-press-start text-retro-electric-blue animate-pulse-glow">
@@ -97,7 +82,6 @@ const About = () => {
                 <span className="text-retro-neon-green">Dev Full-Stack</span>
               </p>
             </div>
-
             <div className="md:w-2/3">
               <div className="bg-black bg-opacity-70 border-2 border-retro-electric-blue shadow-[0_0_10px_#00ffff] p-6">
                 <h3 className="font-press-start text-retro-electric-blue mb-3">
