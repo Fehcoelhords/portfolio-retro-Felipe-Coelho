@@ -1,27 +1,37 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import imgAdvogado from "../../assets/foto02_projeto.jpeg";
-import imgOmega from "../../assets/foto01_projeto.jpg";
+import imgOmega from "../../assets/banner_2.JPG";
+// Corrigindo o nome da imagem para o projeto To-Do List
+import imgTodoList from "../../assets/foto01_projeto.JPG";
 
 const Projects = () => {
   const projectList = [
     {
       image: imgAdvogado,
       title: "Site para Advogado",
-      // DESCRIÇÃO ATUALIZADA AQUI
       description:
-        "Criação de site em React com design totalmente responsivo. Implementação de animações (Framer Motion) para uma boa experiência do usuário, com destaque para a linha do tempo interativa e cards com efeito 3D.",
-      // TECNOLOGIAS ATUALIZADAS AQUI
-      tech: "React, Framer Motion, Tailwind CSS, Formspree",
+        "Criação de site em React com design totalmente responsivo, animações com Framer Motion e formulário de contato funcional.",
+      tech: "React, Framer Motion, Tailwind CSS",
       liveUrl: "https://dr.advdavifelixazevedo.com",
     },
     {
       image: imgOmega,
-      title: "API de Lista de Tarefas com Autenticação",
+      title: "Website Omega Recycling Brasil",
       description:
-        "Construção de uma API RESTful completa para um aplicativo de gerenciamento de tarefas. O projeto implementa um sistema de autenticação seguro com JWT, garantindo que cada usuário possa criar, ler, atualizar e deletar apenas suas próprias tarefas.",
-      tech: " Node.js, Express.js, MongoDB, Mongoose, JSON Web Token (JWT), bcryptjs.",
-      liveUrl: "https://github.com/Fehcoelhords/todo-list-api",
+        "Migração de um site estático para uma aplicação React moderna e performática, reconstruída do zero com foco em performance.",
+      tech: "React, Vite, Tailwind CSS",
+      liveUrl: "https://omega-recycling-react.netlify.app/",
+    },
+    {
+      // --- TERCEIRO PROJETO COM A IMAGEM CORRETA ---
+      image: imgTodoList,
+      title: "API de Lista de Tarefas (To-Do)",
+      description:
+        "API RESTful completa com autenticação para gerenciamento de tarefas. Inclui operações de CRUD para usuários e tarefas.",
+      tech: "Node.js, Express, MongoDB",
+      // Por favor, adicione o link correto aqui
+      liveUrl: "#",
     },
   ];
 
@@ -31,7 +41,8 @@ const Projects = () => {
         <h2 className="text-center mb-12 text-2xl md:text-3xl font-press-start text-retro-electric-blue animate-pulse-glow">
           PROJETOS: MISSÕES CONCLUÍDAS
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Layout ajustado para até 3 colunas em telas grandes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projectList.map((project) => (
             <ProjectCard
               key={project.title}

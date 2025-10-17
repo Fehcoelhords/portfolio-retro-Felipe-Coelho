@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes } from "react-icons/fa"; // Ícones para o menu
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,167 +9,174 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const linkClassName =
-    "block md:inline-block nav-link btn-arcade cursor-pointer text-center w-full md:w-auto";
+  // --- NOVO ESTILO PARA OS LINKS ---
+  // Base do botão: forma angular, fundo semi-transparente, borda neon
+  const linkBaseClasses =
+    "relative px-5 py-2 font-orbitron uppercase text-sm tracking-widest transition-all duration-300 cursor-pointer";
+  // Efeito de hover: muda a cor do texto e ativa a animação da borda
+  const linkHoverClasses = "hover:text-white hover:shadow-[0_0_15px_#00ffff]";
+
+  // Classe para o link ativo (fornecida para o 'activeClass' do react-scroll)
+  const activeLinkClasses = "active-link";
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 py-3 bg-retro-black bg-opacity-90 border-b-2 border-retro-neon-green shadow-[0_5px_15px_-5px_rgba(57,255,20,0.5)]">
-      <nav className="container mx-auto flex justify-between items-center px-4">
-        {/* Logo */}
-        <a className="text-white font-press-start text-lg" href="#home">
-          <span className="hidden sm:inline">Felipe_Coelho</span>
-          <span className="inline sm:hidden">F.Coelho</span>
-          <span className="inline-block w-2.5 h-2.5 bg-retro-neon-green rounded-full ml-2 relative top-[-2px] shadow-[0_0_5px_#39ff14,0_0_10px_#39ff14] animate-ping-slow"></span>
-        </a>
+    <>
+      {/* Elemento de estilo: adiciona um gradiente sutil no topo da página */}
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-retro-electric-blue/20 to-transparent pointer-events-none z-40"></div>
 
-        {/* Links do Menu para Desktop */}
-        <div className="hidden md:flex items-center">
-          <ul className="flex items-center space-x-2">
-            <li>
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className={linkClassName}
-              >
-                Início
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className={linkClassName}
-              >
-                Sobre Mim
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="skills"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className={linkClassName}
-              >
-                Habilidades
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className={linkClassName}
-              >
-                Projetos
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className={linkClassName}
-              >
-                Contato
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <header className="fixed top-0 left-0 w-full z-50 py-4 bg-black/50 backdrop-blur-sm border-b border-retro-electric-blue/30">
+        <nav className="container mx-auto flex justify-between items-center px-4">
+          {/* Logo com novo estilo */}
+          <a
+            className="text-white font-press-start text-xl drop-shadow-[0_0_8px_#00ffff] transition-transform hover:scale-105"
+            href="#home"
+          >
+            Felipe_Coelho
+            <span className="inline-block w-2 h-2 bg-retro-neon-green rounded-full ml-2 shadow-[0_0_8px_#39ff14] animate-pulse"></span>
+          </a>
 
-        {/* Botão do Menu Mobile (Hambúrguer) */}
-        <button
-          className="md:hidden text-2xl text-retro-electric-blue"
-          onClick={toggleMenu}
-        >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </nav>
+          {/* Links do Menu para Desktop com novo design */}
+          <div className="hidden md:flex items-center space-x-2">
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass={activeLinkClasses}
+              className={`${linkBaseClasses} ${linkHoverClasses}`}
+            >
+              Início
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass={activeLinkClasses}
+              className={`${linkBaseClasses} ${linkHoverClasses}`}
+            >
+              Sobre Mim
+            </Link>
+            <Link
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass={activeLinkClasses}
+              className={`${linkBaseClasses} ${linkHoverClasses}`}
+            >
+              Habilidades
+            </Link>
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass={activeLinkClasses}
+              className={`${linkBaseClasses} ${linkHoverClasses}`}
+            >
+              Projetos
+            </Link>
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass={activeLinkClasses}
+              className={`${linkBaseClasses} ${linkHoverClasses}`}
+            >
+              Contato
+            </Link>
+          </div>
 
-      {/* Menu Mobile Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-retro-black bg-opacity-95 mt-2 p-4">
-          <ul className="flex flex-col items-center space-y-4">
-            <li>
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={toggleMenu}
-                className={linkClassName}
-              >
-                Início
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={toggleMenu}
-                className={linkClassName}
-              >
-                Sobre Mim
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="skills"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={toggleMenu}
-                className={linkClassName}
-              >
-                Habilidades
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={toggleMenu}
-                className={linkClassName}
-              >
-                Projetos
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={toggleMenu}
-                className={linkClassName}
-              >
-                Contato
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
-    </header>
+          {/* Botão do Menu Mobile (Hambúrguer) */}
+          <button
+            className="md:hidden text-3xl text-retro-electric-blue"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </nav>
+
+        {/* Menu Mobile Dropdown com novo design */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/90 mt-4 p-4">
+            <ul className="flex flex-col items-center space-y-6">
+              <li>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className={linkBaseClasses}
+                >
+                  Início
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className={linkBaseClasses}
+                >
+                  Sobre Mim
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="skills"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className={linkBaseClasses}
+                >
+                  Habilidades
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className={linkBaseClasses}
+                >
+                  Projetos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className={linkBaseClasses}
+                >
+                  Contato
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 
