@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-// NOMES CORRIGIDOS PARA MINÚSCULAS
 import imgAdvogado from "../../assets/foto02_projeto.jpeg";
 import imgOmega from "../../assets/banner_2.jpg";
 import imgTodoList from "../../assets/foto01_projeto.jpg";
@@ -56,4 +55,5 @@ const Projects = () => {
   );
 };
 
+// --- CORREÇÃO FINAL ESTÁ AQUI ---
 export default Projects;

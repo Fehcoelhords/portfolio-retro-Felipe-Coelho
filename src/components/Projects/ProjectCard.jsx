@@ -1,59 +1,36 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
-// CORREÇÃO FINAL E DEFINITIVA: Usando o nome do arquivo em minúsculas
-import imgAdvogado from "../../assets/foto02_projeto.jpeg";
-import imgOmega from "../../assets/banner_2.jpg";
-import imgTodoList from "../../assets/foto01_projeto.jpg";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
-const Projects = () => {
-  const projectList = [
-    {
-      image: imgAdvogado,
-      title: "Site para Advogado",
-      description:
-        "Criação de site em React com design totalmente responsivo, animações com Framer Motion e formulário de contato funcional.",
-      tech: "React, Framer Motion, Tailwind CSS",
-      liveUrl: "https://dr.advdavifelixazevedo.com",
-    },
-    {
-      image: imgOmega,
-      title: "Website Omega Recycling Brasil",
-      description:
-        "Migração de um site estático para uma aplicação React moderna e performática, reconstruída do zero com foco em performance.",
-      tech: "React, Vite, Tailwind CSS",
-      liveUrl: "https://omega-recycling-react.netlify.app/",
-    },
-    {
-      image: imgTodoList,
-      title: "API de Lista de Tarefas (To-Do)",
-      description:
-        "API RESTful completa com autenticação para gerenciamento de tarefas. Inclui operações de CRUD para usuários e tarefas.",
-      tech: "Node.js, Express, MongoDB",
-      liveUrl: "#",
-    },
-  ];
-
+const ProjectCard = ({ image, title, description, tech, liveUrl }) => {
   return (
-    <section id="projects" className="bg-retro-dark-grey py-20 px-8">
-      <div className="container mx-auto text-white">
-        <h2 className="text-center mb-12 text-2xl md:text-3xl font-press-start text-retro-electric-blue animate-pulse-glow">
-          PROJETOS: MISSÕES CONCLUÍDAS
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projectList.map((project) => (
-            <ProjectCard
-              key={project.title}
-              image={project.image}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              liveUrl={project.liveUrl}
-            />
-          ))}
+    <div className="bg-black bg-opacity-70 border-2 border-retro-vibrant-red h-full overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-[0_0_20px_#00ffff] hover:border-retro-electric-blue">
+      <img
+        src={image}
+        className="w-full h-48 object-cover border-b-2 border-retro-purple"
+        alt={`Screenshot do projeto ${title}`}
+      />
+      <div className="p-6">
+        <h3 className="font-press-start text-lg text-retro-electric-blue mb-3">
+          {title}
+        </h3>
+        <p className="font-orbitron text-sm mb-4">{description}</p>
+        <p className="font-orbitron text-xs text-retro-neon-green mb-6">
+          Tecnologias: {tech}
+        </p>
+        <div className="text-center">
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-retro-dark-grey text-retro-electric-blue font-press-start text-xs uppercase border-2 border-retro-electric-blue transition-all duration-300 hover:bg-retro-electric-blue hover:text-retro-black hover:shadow-[0_0_15px_#00ffff]"
+          >
+            <FaExternalLinkAlt />
+            Ver Site
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Projects;
+export default ProjectCard;
