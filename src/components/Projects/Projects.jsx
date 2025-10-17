@@ -1,9 +1,9 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import imgAdvogado from "../../assets/foto02_projeto.jpeg";
-import imgOmega from "../../assets/banner_2.jpg";
-// Corrigindo o nome da imagem para o projeto To-Do List
-import imgTodoList from "../../assets/foto01_projeto.JPG";
+import imgOmega from "../../assets/banner_2.jpg"; // Corrigido na etapa anterior
+// CORREÇÃO FINAL: Usando a extensão correta .jpeg
+import imgTodoList from "../../assets/foto01_projeto.jpeg";
 
 const Projects = () => {
   const projectList = [
@@ -24,13 +24,11 @@ const Projects = () => {
       liveUrl: "https://omega-recycling-react.netlify.app/",
     },
     {
-      // --- TERCEIRO PROJETO COM A IMAGEM CORRETA ---
       image: imgTodoList,
       title: "API de Lista de Tarefas (To-Do)",
       description:
         "API RESTful completa com autenticação para gerenciamento de tarefas. Inclui operações de CRUD para usuários e tarefas.",
       tech: "Node.js, Express, MongoDB",
-      // Por favor, adicione o link correto aqui
       liveUrl: "#",
     },
   ];
@@ -41,7 +39,6 @@ const Projects = () => {
         <h2 className="text-center mb-12 text-2xl md:text-3xl font-press-start text-retro-electric-blue animate-pulse-glow">
           PROJETOS: MISSÕES CONCLUÍDAS
         </h2>
-        {/* Layout ajustado para até 3 colunas em telas grandes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projectList.map((project) => (
             <ProjectCard
