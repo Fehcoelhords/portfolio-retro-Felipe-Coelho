@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import imgAdvogado from "../../assets/foto02_projeto.jpeg";
-import imgOmega from "../../assets/banner_2.JPG";
+import imgOmega from "../../assets/banner_2.jpg";
 // Corrigindo o nome da imagem para o projeto To-Do List
 import imgTodoList from "../../assets/foto01_projeto.JPG";
 
