@@ -1,5 +1,5 @@
 import React from "react";
-// CORREÇÃO FINAL E DEFINITIVA: Usando o nome do arquivo em minúsculas
+// NOME CORRIGIDO PARA MINÚSCULAS
 import backgroundImage from "../../assets/fundo01.png";
 import TetrisAnimation from "./TetrisAnimation.jsx";
 

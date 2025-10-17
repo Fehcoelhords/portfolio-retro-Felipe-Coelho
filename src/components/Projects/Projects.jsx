@@ -1,9 +1,9 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-// NOMES CORRIGIDOS ABAIXO
-import imgAdvogado from "../../assets/foto02_projeto.JPEG";
-import imgOmega from "../../assets/banner_2.JPG";
-import imgTodoList from "../../assets/foto01_projeto.JPG";
+// NOMES CORRIGIDOS PARA MINÚSCULAS
+import imgAdvogado from "../../assets/foto02_projeto.jpeg";
+import imgOmega from "../../assets/banner_2.jpg";
+import imgTodoList from "../../assets/foto01_projeto.jpg";
 
 const Projects = () => {
   const projectList = [

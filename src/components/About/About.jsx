@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// NOMES CORRIGIDOS ABAIXO
-import minhaFoto from "../../assets/minha_foto.JPG";
-import trainerImg from "../../assets/trainer.PNG";
+// NOMES CORRIGIDOS PARA MINÚSCULAS
+import minhaFoto from "../../assets/minha_foto.jpg";
+import trainerImg from "../../assets/trainer.png";
 import { FaGraduationCap, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
